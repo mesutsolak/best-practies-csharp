@@ -30,3 +30,15 @@ public class Person
     public string Surname { get; set; }
 }
 ```
+
+Bir liste içerisinde Where methodunu kullandıktan sonra tekrar ToList yapmak yerine FindAll kullanmak daha mantıklı bir seçim olacaktır.
+
+```C#
+var number = new List<int>
+{
+    1,2,3,4,5
+};
+
+var numberFilterList = number.Where(x => x > 3).ToList();
+var numberFilterList = number.FindAll(x => x > 3);
+```
